@@ -72,6 +72,13 @@ Task("Build")
     DotNetBuild("./Hello-Transifex.sln", (conf) => conf.SetConfiguration(configuration));
 });
 
+Task("Create-ZipFile")
+  .IsDependentOn("Build")
+  .Does(() =>
+{
+    Zip("./src/Hello-Transifex/bin/" + configuration, "./Hello-Transifex-bin.zip");
+});
+
 Task("Default")
     .IsDependentOn("Build");
 

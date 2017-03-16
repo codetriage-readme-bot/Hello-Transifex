@@ -18,3 +18,5 @@ tools/**
 # Ignore all resx translation files
 # except for the default one
 [Rr]esources.*.resx
+
+*.zip
