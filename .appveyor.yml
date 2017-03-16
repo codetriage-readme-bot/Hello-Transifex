@@ -14,7 +14,7 @@ init:
 install:
 - cmd: pip install transifex-client
 build_script:
-- ps: .\build.ps1
+- ps: .\build.ps1 -Target "Create-ZipFile"
 test: off
 artifacts:
 - path: '**/*.zip'
