@@ -9,3 +9,4 @@ See the [latest build artifacts](https://ci.appveyor.com/project/AdmiringWorm/he
 The transifex project is locate here: <https://www.transifex.com/wormie-demos/hello-transifex>
 
 **NOTE: The first time you run the tx client locally you will be prompted to provide a api key**
+**BIG NOTE: This demo uses a alpha version of a upcoming addin called Cake.Transifex**
