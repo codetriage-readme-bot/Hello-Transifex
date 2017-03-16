@@ -7,7 +7,9 @@ environment:
 init:
 - ps: >-
     $encoding = New-Object System.Text.UTF8Encoding($false)
+
     $text = "[https://www.transifex.com]`r`nhostname = https://www.transifex.com`r`npassword = $env:TRANSIFEX_TOKEN`r`nusername = api"
+
     [System.IO.File]::WriteAllText("$env:USERPROFILE\.transifexrc", $text, $encoding)
 install:
 - cmd: pip install transifex-client
