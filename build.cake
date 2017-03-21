@@ -33,8 +33,8 @@ Task("Upload-Translations")
 {
     TransifexPush(new TransifexPushSettings
     {
-        Source = true,
-        Translations = true
+        UploadSourceFiles = true,
+        UploadTranslations = true
     });
 });
 
