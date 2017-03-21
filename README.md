@@ -7,6 +7,6 @@ See the [wiki](https://github.com/AdmiringWorm/Hello-Transifex/wiki) for how to 
 See the [latest build artifacts](https://ci.appveyor.com/project/AdmiringWorm/hello-transifex/build/artifacts) for the compiled result of this project, including the satellite assemblies.
 
 The transifex project is locate here: <https://www.transifex.com/wormie-demos/hello-transifex>
+This demo depends on the [Cake.Transifex](https://github.com/WormieCorp/Cake.Transifex) cake addin.
 
 **NOTE: The first time you run the tx client locally you will be prompted to provide a api key**
-**BIG NOTE: This demo uses a alpha version of a upcoming addin called Cake.Transifex**

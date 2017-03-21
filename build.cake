@@ -1,4 +1,4 @@
-#addin "nuget:?package=Cake.Transifex&prerelease"
+#addin "nuget:?package=Cake.Transifex"
 
 var configuration = Argument("configuration", "Release");
 var target        = Argument("target", "Default");
