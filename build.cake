@@ -28,7 +28,7 @@ Task("Download-Translations")
 
 Task("Upload-Translation-Source")
 // Basic criteria to only upload only translation source if target is called directly, or we are on the develop branch and running on appveyor
-  .WithCriteria(() => target == 'Upload-Translation-Source' ||
+  .WithCriteria(() => target == "Upload-Translation-Source" ||
                 (buildSystem.AppVeyor.IsRunningOnAppVeyor && buildSystem.AppVeyor.Environment.Repository.Branch == "develop"))
   .Does(() =>
 {
