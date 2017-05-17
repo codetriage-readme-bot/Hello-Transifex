@@ -39,7 +39,7 @@ Task("Upload-Translation-Source")
 });
 
 Task("Translation-Status")
-  .IsDependentOn('Download-Translations')
+  .IsDependentOn("Download-Translations")
   .Does(() =>
 {
   TransifexStatus();
