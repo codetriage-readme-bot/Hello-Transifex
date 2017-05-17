@@ -2,6 +2,7 @@
 {
     using System;
     using System.Globalization;
+    using System.Linq;
     using System.Threading;
     using Hello_Transifex.Properties;
 
@@ -9,8 +10,13 @@
     {
         private static void Main(string[] args)
         {
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CurrentCulture;
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.CurrentUICulture;
+            var culture = CultureInfo.CurrentCulture;
+            var uiCulture = CultureInfo.CurrentUICulture;
+            if (args.Any()) {
+                uiCulture = CultureInfo.CreateSpecificCulture(args.Last());
+            }
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = uiCulture;
             Console.WriteLine(Resources.UsingCulture, Thread.CurrentThread.CurrentCulture);
             Console.WriteLine(Resources.UsingUiCulture, Thread.CurrentThread.CurrentUICulture);
 
