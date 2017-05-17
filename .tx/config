@@ -1,9 +1,9 @@
 [main]
 host = https://www.transifex.com
+lang_map = en_GB: en-GB, en_US: en-US
 
 [hello-transifex.resourcesresx]
 source_file = src/Hello-Transifex/Properties/Resources.resx
 file_filter = src/Hello-Transifex/Properties/Resources.<lang>.resx
 source_lang = en
 type = RESX
-
