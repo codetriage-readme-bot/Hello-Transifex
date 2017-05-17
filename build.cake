@@ -1,4 +1,4 @@
-#addin "nuget:?package=Cake.Transifex"
+#addin "nuget:?package=Cake.Transifex&version=0.2.0"
 
 var configuration = Argument("configuration", "Release");
 var target        = Argument("target", "Default");
@@ -21,7 +21,7 @@ Task("Download-Translations")
     {
         All = true,
         MinimumPercentage = 60,
-        Mode = TransifexMode.Reviewed
+        Mode = TransifexMode.OnlyReviewed
     });
 });
 
@@ -36,6 +36,13 @@ Task("Upload-Translation-Source")
         UploadSourceFiles = true,
         UploadTranslations = false
     });
+});
+
+Task("Translation-Status")
+  .IsDependentOn('Download-Translations')
+  .Does(() =>
+{
+  TransifexStatus();
 });
 
 // This task can be used if you need to
@@ -54,7 +61,7 @@ Task("Upload-Translations")
 Task("Build")
   .IsDependentOn("Clean")
   .IsDependentOn("Upload-Translation-Source")
-  .IsDependentOn("Download-Translations")
+  .IsDependentOn("Translation-Status")
   .Does(() =>
 {
     DotNetBuild("./Hello-Transifex.sln", (conf) => conf.SetConfiguration(configuration));
