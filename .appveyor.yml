@@ -16,7 +16,7 @@ install:
 - cmd: pip install transifex-client
 build_script:
 - ps: cp "$env:TRANSLATION_DIR\*.resx" "src/Hello-Transifex/Properties/" -Force
-- ps: .\build.ps1 -Target "Create-ZipFile"
+- ps: .\build.ps1 -Target "Create-ZipFile" -Verbosity Diagnostic
 - ps: cp "src/Hello-Transifex/Properties/*.resx" "$env:TRANSLATION_DIR\" -Force -Exclude 'Resources.resx'
 - cmd: 7z a translation-cache.zip "%TRANSLATION_DIR%\*.resx" # This is just so we can see what files we have cached
 test: off
