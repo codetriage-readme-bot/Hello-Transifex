@@ -86,5 +86,23 @@ namespace Hello_Transifex.Properties {
                 return ResourceManager.GetString("ThankYou", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Using the following culture: {0}.
+        /// </summary>
+        internal static string UsingCulture {
+            get {
+                return ResourceManager.GetString("UsingCulture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Using the following UI culture: {0}.
+        /// </summary>
+        internal static string UsingUiCulture {
+            get {
+                return ResourceManager.GetString("UsingUiCulture", resourceCulture);
+            }
+        }
     }
 }

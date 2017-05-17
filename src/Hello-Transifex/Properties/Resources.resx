@@ -126,4 +126,10 @@
   <data name="ThankYou" xml:space="preserve">
     <value>Thank you for your time.</value>
   </data>
+  <data name="UsingCulture" xml:space="preserve">
+    <value>Using the following culture: {0}</value>
+  </data>
+  <data name="UsingUiCulture" xml:space="preserve">
+    <value>Using the following UI culture: {0}</value>
+  </data>
 </root>
