@@ -79,6 +79,15 @@ namespace Hello_Transifex.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Just a temporary string to test out caching..
+        /// </summary>
+        internal static string TemporaryString {
+            get {
+                return ResourceManager.GetString("TemporaryString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thank you for your time..
         /// </summary>
         internal static string ThankYou {
