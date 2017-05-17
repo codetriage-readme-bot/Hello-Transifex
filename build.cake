@@ -36,7 +36,7 @@ Task("Upload-Translation-Source")
     {
         UploadSourceFiles = true,
         UploadTranslations = false
-    })
+    });
 });
 
 // This task can be used if you need to
