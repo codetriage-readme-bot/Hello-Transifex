@@ -123,9 +123,6 @@
   <data name="SeeTheWiki" xml:space="preserve">
     <value>Please see the wiki for how this demo was setup on transifex, and how it was initialized with the transifex client.</value>
   </data>
-  <data name="TemporaryString" xml:space="preserve">
-    <value>Just a temporary string to test out caching.</value>
-  </data>
   <data name="ThankYou" xml:space="preserve">
     <value>Thank you for your time.</value>
   </data>
