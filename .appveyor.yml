@@ -4,17 +4,24 @@ pull_requests:
 environment:
   TRANSIFEX_TOKEN:
     secure: G7OCUFTUfOC89yjju3g64LeF3aTqCL5wJdQ+Y2Wa+/TXHUFjdD+SACbwZcIujuBJ
+  TRANSLATION_DIR: 'C:\translations'
 init:
-- ps: >-
+- ps: |
     $encoding = New-Object System.Text.UTF8Encoding($false)
-
     $text = "[https://www.transifex.com]`r`nhostname = https://www.transifex.com`r`npassword = $env:TRANSIFEX_TOKEN`r`nusername = api"
-
     [System.IO.File]::WriteAllText("$env:USERPROFILE\.transifexrc", $text, $encoding)
+
+    if (!(Test-Path $env:TRANSLATION_DIR)) { mkdir $env:TRANSLATION_DIR }
 install:
 - cmd: pip install transifex-client
 build_script:
+- ps: cp "$env:TRANSLATION_DIR\*.resx" "src/Hello-Transifex/Properties/" -Force
 - ps: .\build.ps1 -Target "Create-ZipFile"
+- ps: cp "src/Hello-Transifex/Properties/*.resx" "$env:TRANSLATION_DIR\" -Force -Exclude 'Resources.resx'
+- cmd: 7z a translation-cache.zip "%TRANSLATION_DIR%\*.resx" # This is just so we can see what files we have cached
 test: off
 artifacts:
 - path: '**/*.zip'
+cache:
+  - '%TRANSLATION_DIR%'
+  - 'tools -> tools/packages.config'
