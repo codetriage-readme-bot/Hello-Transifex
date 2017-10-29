@@ -13,7 +13,7 @@ init:
 
     if (!(Test-Path $env:TRANSLATION_DIR)) { mkdir $env:TRANSLATION_DIR }
 install:
-- cmd: pip install transifex-client
+- cmd: cinst transifex-client --version 0.12.4
 build_script:
 - ps: cp "$env:TRANSLATION_DIR\*.resx" "src/Hello-Transifex/Properties/" -Force
 - ps: .\build.ps1 -Target "Create-ZipFile" -Verbosity Diagnostic
